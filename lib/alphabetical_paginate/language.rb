@@ -1,4 +1,5 @@
 # coding: utf-8
+# # Warning! this is not the original alpha_paginate. Made changes to charasters support (croatian letters). Original can be found on:  https://github.com/lingz/alphabetical_paginate
 module AlphabeticalPaginate
   class Language
     APPROXIMATIONS = {

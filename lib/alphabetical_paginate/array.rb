@@ -1,4 +1,5 @@
 # coding: utf-8
+# Warning! this is not the original alpha_paginate. Made changes to charasters support (croatian letters). Original can be found on:  https://github.com/lingz/alphabetical_paginate
 class Array
   def alpha_paginate current_field, params = {enumerate:false, default_field: "a", 
                                               paginate_all: false, numbers: true, include_all: true,

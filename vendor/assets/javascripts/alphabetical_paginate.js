@@ -1,3 +1,5 @@
+// Modified javascript so that it adds &page=1 to all the urls when anchor of pagination is pressed.
+// This modifacation have been made for implementing double pagination
 $(document).load(
     function () {
         $(function() {
