@@ -1,10 +1,11 @@
 # coding: utf-8
+# # Warning! this is not the original alpha_paginate. Made changes to charasters support (croatian letters). Original can be found on:  https://github.com/lingz/alphabetical_paginate
 module AlphabeticalPaginate
   class Language
     APPROXIMATIONS = {
         "Э" => "je",
         "Ю" => "yu"
-      }
+    }
 
     attr_reader :code
 
@@ -33,7 +34,7 @@ module AlphabeticalPaginate
       if russian?
         ["А","Б","В","Г","Д","Е","Ж","З","И","К","Л","М","Н","О","П","Р","С","Т","У","Ф","Х","Ц","Ч","Ш","Э","Ю","Я"]
       else
-        ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
+        ["A","B","C","Č","Ć","D","Dž","E","F","G","H","I","J","K","L","Lj","M","N","Nj","O","P","Q","R","S","Š","T","U","V","W","X","Y","Z","Ž"].localize(:hr).to_a
       end
     end
 
