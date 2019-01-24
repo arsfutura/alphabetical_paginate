@@ -86,7 +86,7 @@ module AlphabeticalPaginate
           field_val = block_given? ? yield(x).to_s : x.id.to_s
           field_letter = field_val[0].mb_chars.downcase.to_s
 
-          if  ["A","B","C","Č","Ć","D","Dž","E","F","G","H","I","J","K","L","Lj","M","N","Nj","O","P","Q","R","S","Š","T","U","V","W","X","Y","Z","Ž"].include?(field_letter.upcase)
+          if params[:language].letters_range.include?(field_letter.upcase)
             availableLetters[field_letter] = true if !availableLetters.has_key? field_letter
             field = params[:slugged_link] ? slug : field_letter
 
