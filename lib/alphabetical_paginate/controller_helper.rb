@@ -81,6 +81,7 @@ module AlphabeticalPaginate
       else
         availableLetters = {}
         self.each do |x|
+          x = x.force_encoding(Encoding::UTF_8)
           slug = eval("x.#{params[:slug_field]}") if params[:slugged_link]
 
           field_val = block_given? ? yield(x).to_s : x.id.to_s
