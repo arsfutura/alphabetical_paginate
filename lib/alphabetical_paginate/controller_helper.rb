@@ -85,6 +85,7 @@ module AlphabeticalPaginate
 
           field_val = block_given? ? yield(x).to_s : x.id.to_s
           field_letter = field_val[0].to_s
+          field = params[:slugged_link] ? slug : field_letter
           puts '--------'
           puts x
           puts field_letter
