@@ -90,7 +90,7 @@ module AlphabeticalPaginate
           puts x
           puts field_letter
           puts field
-          puts current_field == field
+          puts current_field.eql? field
           if params[:language].letters_range.include?(field_letter.upcase)
             availableLetters[field_letter] = true if !availableLetters.has_key? field_letter
             field = params[:slugged_link] ? slug : field_letter
