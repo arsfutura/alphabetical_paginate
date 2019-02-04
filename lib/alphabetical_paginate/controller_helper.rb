@@ -86,17 +86,11 @@ module AlphabeticalPaginate
           field_val = block_given? ? yield(x).to_s : x.id.to_s
           field_letter = field_val[0].to_s
           field = params[:slugged_link] ? slug : field_letter
-          puts '--------'
-          puts x
-          puts field_letter
-          puts field
-          puts current_field.mb_chars.eql? field.mb_chars
           if params[:language].letters_range.include?(field_letter.upcase)
             availableLetters[field_letter] = true if !availableLetters.has_key? field_letter
             field = params[:slugged_link] ? slug : field_letter
 
-            debugger
-            output << x if all || (current_field == field)
+            output << x if all || (current_field == field.downcase)
           elsif /[0-9]/.match(field_letter)
             if params[:enumerate]
               availableLetters[field_letter] = true if !availableLetters.has_key? field_letter
