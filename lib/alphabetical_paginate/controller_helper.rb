@@ -49,7 +49,7 @@ module AlphabeticalPaginate
       end
 
       current_field ||= params[:default_field]
-      current_field = current_field.mb_chars.downcase.to_s
+      current_field = current_field.downcase.to_s
       all = params[:include_all] && current_field == "all"
 
       if params[:db_mode]
