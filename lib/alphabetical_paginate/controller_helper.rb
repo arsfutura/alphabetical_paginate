@@ -89,6 +89,7 @@ module AlphabeticalPaginate
           puts '--------'
           puts x
           puts field_letter
+          puts field
           puts current_field == field
           if params[:language].letters_range.include?(field_letter.upcase)
             availableLetters[field_letter] = true if !availableLetters.has_key? field_letter
