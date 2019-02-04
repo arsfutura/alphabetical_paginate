@@ -49,7 +49,7 @@ module AlphabeticalPaginate
       end
 
       current_field ||= params[:default_field]
-      current_field = current_field.downcase.to_s
+      current_field = current_field.downcase
       all = params[:include_all] && current_field == "all"
 
       if params[:db_mode]
@@ -85,7 +85,10 @@ module AlphabeticalPaginate
 
           field_val = block_given? ? yield(x).to_s : x.id.to_s
           field_letter = field_val[0].to_s
-
+          puts '--------'
+          puts x
+          puts field_letter
+          puts current_field == field
           if params[:language].letters_range.include?(field_letter.upcase)
             availableLetters[field_letter] = true if !availableLetters.has_key? field_letter
             field = params[:slugged_link] ? slug : field_letter
