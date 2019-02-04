@@ -95,6 +95,7 @@ module AlphabeticalPaginate
             availableLetters[field_letter] = true if !availableLetters.has_key? field_letter
             field = params[:slugged_link] ? slug : field_letter
 
+            debugger
             output << x if all || (current_field == field)
           elsif /[0-9]/.match(field_letter)
             if params[:enumerate]
