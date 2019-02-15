@@ -86,7 +86,7 @@ module AlphabeticalPaginate
           field_val = block_given? ? yield(x).to_s : x.id.to_s
           field_letter = field_val[0].to_s
           field = params[:slugged_link] ? slug : field_letter
-          if params[:language].letters_range.include?(field_letter.upcase)
+          if params[:language].letters_range.include?(field_letter.mb_chars.upcase.to_s)
             availableLetters[field_letter] = true if !availableLetters.has_key? field_letter
             field = params[:slugged_link] ? slug : field_letter
 
