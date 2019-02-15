@@ -106,7 +106,7 @@ module AlphabeticalPaginate
         end
 
         params[:availableLetters] = availableLetters.collect{ |k,v| k.mb_chars.capitalize.to_s }
-        output.sort! {|x, y| block_given? ? (yield(x).localize(:hr).to_s <=> yield(y).localize(:hr).to_s) : (x.id.localize(:hr).to_s<=> y.id.localize(:hr).to_s) } if params[:sort]
+        # output.sort! {|x, y| block_given? ? (yield(x).localize(:hr).to_s <=> yield(y).localize(:hr).to_s) : (x.id.localize(:hr).to_s<=> y.id.localize(:hr).to_s) } if params[:sort]
       end
       params[:currentField] = current_field.mb_chars.capitalize.to_s
 
