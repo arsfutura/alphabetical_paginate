@@ -40,7 +40,7 @@ module AlphabeticalPaginate
           end
         end
       else
-        options[:availableLetters].localize(:hr).sort!.to_a
+        options[:availableLetters].sort!.to_a
         options[:availableLetters] = options[:availableLetters][1..-1] + ["*"] if options[:availableLetters][0] == "*"
         #Ensure that "All" is always at the front of the array
         if options[:include_all]
